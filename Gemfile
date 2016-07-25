@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+# gem 'sprockets', '>= 3.0.0'
+# gem 'sprockets-es6', require: 'sprockets/es6'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
