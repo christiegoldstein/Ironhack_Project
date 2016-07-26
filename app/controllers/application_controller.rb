@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
   			{hobbies_attributes: [:name]}, {courses_attributes: [:name, :code]})
   		end
   	end
+
+  	def after_sign_in_path_for(resource)
+  		"/users/#{current_user.id}/profile"
+  	end
+
+  	def after_sign_up_path_for(resource)
+  		"/users/#{current_user.id}/profile"
+  	end
 end
