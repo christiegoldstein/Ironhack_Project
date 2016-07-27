@@ -14,5 +14,7 @@ Rails.application.routes.draw do
 
   #post the edits made in form 
   patch "/users/profile" => "users#update"
+
+  get "/users/find_groups" => "study_groups#find"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,8 @@
+<h1>Groups for <%= @course.name %></h1>
+<ul>
+	<% @groups_arr.each do |group| %>
+		<li><%= group.name %></li>
+		<p><%= group.meet_place %></p>
+		<p><%= group.meet_time %></p>
+	<% end %>
+</ul>

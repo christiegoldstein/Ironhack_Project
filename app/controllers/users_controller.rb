@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
 	def profile
 		@user = current_user
+		p current_user
 		render "profile"
 	end
 
