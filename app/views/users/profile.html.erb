@@ -1,7 +1,8 @@
 <h1>Hello, <%= @user.name %> <%= @user.last_name %></h1>
 <div>
-	<%= current_user.major %>
+	<%= current_user.major %></br>
+	<%= current_user.courses.last.name %>
 </div>
 <a href= "/users/profile/edit">Edit Profile</a>
 <a href = "/users/find_groups">Find Groups</a>
-<%= link_to "Sign Out", "/users/sign_out" %>
+<%= link_to "Sign Out", destroy_user_session_path %>

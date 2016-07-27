@@ -48,25 +48,6 @@
     <%= f.text_field :minor %>
   </div>
 
-  <%= f.fields_for :hobbies, resource.hobbies.new do |h| %>
-     <div>
-        <%= h.label :name, "Hobby Name" %><br />
-        <%= h.text_field :name %>
-     </div>
-  <% end %>
-
-
-  <%= f.fields_for :courses, resource.courses.new do |c| %>
-    <div>
-      <%= c.label :name, "Course Name" %><br />
-      <%= c.text_field :name %>
-    </div>
-    <div>
-      <%= c.label :code, "Course Code" %><br />
-      <%= c.text_field :code %>
-    </div>
-  <% end %>
-
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

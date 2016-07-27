@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @user, :url => url_for(:controller => 'users', :action => 'update') do |f| %>
+    <%= form_for current_user, :url => url_for(:controller => 'users', :action => 'update') do |f| %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -42,6 +42,7 @@
 	    <div>
 	      <%= c.label :code, "Course Code" %><br />
 	      <%= c.text_field :code %>
+
 	    </div>
 	  <% end %>
 

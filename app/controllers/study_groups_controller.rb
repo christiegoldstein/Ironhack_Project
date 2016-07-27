@@ -6,13 +6,12 @@ class StudyGroupsController < ApplicationController
 
 	def find
 		@user = current_user
-		@course_id = UserCourse.find_by(user_id: @user.id).course_id
-		@course = Course.find_by(id: @course_id)
-		@search_by = StudyGroup.where(course_id: @course_id)
+		@course = @user.courses.last.name
+		@search_by = StudyGroup.where(course_id: @user.courses.last.id)
 		p "hello"
 		p @search_by
 		@search_by.each do |result|
-		
+			@result
 			@groups_arr.push(result)
 		end
 		render "find"
