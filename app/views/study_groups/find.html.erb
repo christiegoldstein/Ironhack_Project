@@ -1,3 +1,23 @@
+<nav class="navbar navbar-light bg-faded ">
+		<a class="navbar-brand" href="#">ProjectName</a>
+		<div class="row">
+			<ul class="nav navbar-nav navbar-right nav-list">
+			   	<li class="nav-item active">
+			      	<a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+			    </li>
+			    <li class="nav-item">
+			     	<a class="nav-link" href="/users/profile">Profile</a>
+			    </li>
+			    <li class="nav-item">
+			      	<a class="nav-link" href="/users/groups">My Groups</a>
+			   	</li>
+			   	<li class="nav-item">
+			      	<a class="nav-link" href="/users/sign_out">Sign Out</a>
+			   	</li>
+			</ul>
+		</div>
+	</nav> 
+
 <h1>Groups for <%= @course %></h1>
 <ul>
 	<% @groups_arr.each do |group| %>
