@@ -15,3 +15,11 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+	$(".btn-pref .btn").click(function () {
+	    // m$(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+	    // // $(".tab").addClass("active"); // instead of this do the below 
+	    // $(this).removeClass("btn-default").addClass("btn-priary");   
+	});
+});

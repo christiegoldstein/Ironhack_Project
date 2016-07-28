@@ -1,28 +1,38 @@
-<nav class="navbar navbar-light bg-faded ">
-		<a class="navbar-brand" href="#">ProjectName</a>
-		<div class="row">
-			<ul class="nav navbar-nav navbar-right nav-list">
-			   	<li class="nav-item active">
-			      	<a class="nav-link" href="#">Home <span class="sr-only"></span></a>
-			    </li>
-			    <li class="nav-item">
-			     	<a class="nav-link" href="/users/profile">Profile</a>
-			    </li>
-			    <li class="nav-item">
-			      	<a class="nav-link" href="/users/groups">My Groups</a>
-			   	</li>
-			   	<li class="nav-item">
-			      	<a class="nav-link" href="/users/sign_out">Sign Out</a>
-			   	</li>
-			</ul>
-		</div>
+<div class="container-fluid">
+	<nav class="navbar ">
+		<a class="navbar-brand"><img src="/assets/Book_Stack.png" class="logo"></a>
+			<div class="row">
+				<ul class="nav navbar-nav navbar-right nav-list">
+				   	<li class="nav-item active">
+				      	<a class="nav-link" href="/users/profile">Profile<span class="sr-only"></span></a>
+				    </li>
+				    <li class="nav-item active">
+				      	<a class="nav-link" href="/users/find_groups">Find Groups<span class="sr-only"></span></a>
+				    </li>
+				    <li class="nav-item active">
+				      	<a class="nav-link" href="/users/sign-out">Sign Out <span class="sr-only"></span></a>
+				    </li>
+				</ul>
+			</div>
 	</nav> 
 
-<h1>Groups for <%= @course %></h1>
-<ul>
-	<% @groups_arr.each do |group| %>
-		<li><%= group.name %></li>
-		<p><%= group.meet_place %></p>
-		<p><%= group.meet_time %></p>
-	<% end %>
-</ul>
+	<div class="row bg-img-pro">
+		<div class="bg-gradient-pro">
+            <div class="welcome">
+            	<p class="about-text">Find Groups</p>
+            </div>
+           
+        </div>
+	</div>
+
+
+	<h1>Groups for <%= @course %></h1>
+	<ul>
+		<% @search_by.each do |group| %>
+			<li><%= group.name %></li>
+			<p><%= group.meet_place %></p>
+			<p><%= group.meet_time %></p>
+		<% end %>
+	</ul>
+
+</div>
