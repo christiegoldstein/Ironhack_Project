@@ -6,6 +6,12 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.nav-book{
+	height: 100px;
+	width: 180px;
+	margin-top: -40px;
+}
+
 .navbar-brand{
 	font-size: 22px;
 	color: #428bca;
@@ -87,3 +93,27 @@
 	color: white;
 	border-width: 2px;
 }
+
+.content{
+	margin-left: 180px;
+	margin-top: 20px;
+}
+
+.whatwedo{
+	font-size: 20px;
+}
+
+.student-icon{
+	margin-left: 100px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+	float: left;
+}
+
+
+
+
+
