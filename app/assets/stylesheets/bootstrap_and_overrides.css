@@ -6,28 +6,84 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.navbar-brand{
+	font-size: 22px;
+	color: #428bca;
+}
+
 .nav-list{
 	margin-right: 25px;
 }
 
-.typed-cursor{
+.bg-img{
+
+  width: auto;
+  height: 500px;
+  background: url("/assets/students_in_group.jpg");
+  background-size: cover;
+}
+
+.bg-gradient{
+	content: '\A';
+    width: auto; 
+    height: 500px;
+    background:rgba(0,0,0,0.25);
     opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
 }
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+
+.navbar{
+	margin-bottom: 0px;
+	border-radius: 0px;
 }
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+
+.welcome{
+	padding-top: 140px;
 }
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+
+.about{
+	background-color: black;
+	width: auto;
+	height: 50px;
+}
+
+.about-text{
+	text-align: center;
+	font-size: 44px;
+	color: white;
+}
+
+.about-subtext{
+	text-align: center;
+	font-size: 34px;
+	color: white;
+}
+
+.sign-button{
+	text-align: center;
+}
+
+.left-button{
+	margin-right: 8px; 
+	border-radius: 30px;
+	font-size: 20px;
+	padding: 8px 20px;
+}
+
+.right-button{
+
+	margin-left: 8px;
+	border-radius: 20px;
+	font-size: 20px;
+	padding: 8px 20px;
+	border-width: 2px;
+}
+
+.btn-default{
+	background-color: transparent;
+	border-color: white;
+	color: white;
+	border-width: 2px;
 }
