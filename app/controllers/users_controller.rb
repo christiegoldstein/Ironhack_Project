@@ -19,18 +19,23 @@ class UsersController < ApplicationController
 	def update
 		@user = current_user
 		@course = Course.find_by(name: params[:user][:courses_attributes]["0"][:name])
-		@hobby = Course.find_by(name: params[:user][:hobbies_attributes]["0"][:name])
 
- 		if @course != nil
+		@hobby = Course.find_by(name: params[:user][:hobbies_attributes]["0"][:name])
+		@user_course = UserCourse.where(user_id: @user.id, course_id: @course.id)
+		@user_hobby = UserHobby.where(user_id: @user.id, course_id: @hobby.id)
+
+ 		if @course != nil &&  @user_course == nil
 		  	UserCourse.create!(user_id: @user.id, course_id: @course.id)
 		else
-			Course.create!(name: params[:user][:courses_attributes][:name], code: params[:courses_attributes][:code] )
+			new_course = Course.create!(name: params[:user][:courses_attributes][:name], code: params[:courses_attributes][:code] )
+			@user.courses << new_course
 		end
 
-		if @hobby != nil
+		if @hobby != nil && @user_hobby == nil
 			UserHobby.create!(user_id: @user.id, hobby_id: @hobby.id)
 		else
-			Hobby.create!(name: params[:user][:hobbies_attributes][:name])		
+			Hobby.create!(name: params[:user][:hobbies_attributes][:name])
+			@user.hobbies << new_hobby	
 		end
 
 		params[:user].delete(:password) if params[:user][:password].blank?

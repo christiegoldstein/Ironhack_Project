@@ -3,7 +3,8 @@ class StudyGroupsController < ApplicationController
 	def find
 		@user = current_user
 		@course = @user.courses.last.name
-		@search_by = StudyGroup.where(course_id: @user.courses.last.id)
+		@searched_groups = StudyGroup.where(course_id: @user.courses.last.id)
+		@users_arr = StudyGroup.new.majors(@searched_groups)
 		render "find"
 	end
 
