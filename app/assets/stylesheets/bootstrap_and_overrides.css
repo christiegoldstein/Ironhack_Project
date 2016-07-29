@@ -13,10 +13,34 @@
 	padding-right: 0px;
 }
 
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-brand{
+	font-family: 'Khand', sans-serif;
+	font-weight: bolder;
+	font-size: 30px;
+	letter-spacing: 5px;
+	margin-left: 10px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.nav-item{
+	font-family: 'Khand', sans-serif;
+	font-weight: bolder;
+	font-size: 20px;
+	letter-spacing: 3px;
+}
+
 .logo{
-	height: 100px;
-	width: 180px;
-	margin-top: -40px;
+	height: 40px;
+	width: 90px;
+	float: left;
+	margin-top: -10px;
 }
 
 .nav-list{
@@ -43,10 +67,13 @@
 }
 
 .navbar{
-	margin-bottom: 0px;
 	border-radius: 0px;
-	background-color: #E0E0E0;
+	background-color: rgba(0,0,0,0.60);
+	height: 55px;
 	width: auto;
+	font-size: 18px;
+	margin-bottom: 0px;
+	border: 0px;
 }
 
 .welcome{
@@ -54,7 +81,7 @@
 }
 
 .underheading{
-	background-color: #E0E0E0;
+	background-color: white;
 }
 
 .about{
@@ -161,7 +188,7 @@
 .bg-img-pro{
 
   width: auto;
-  height: 300px;
+  height: 260px;
   background: url("/assets/desk");
   background-size: cover;
 }
@@ -169,55 +196,23 @@
 .bg-gradient-pro{
 	content: '\A';
     width: auto; 
-    height: 300px;
-    background:rgba(0,0,0,0.41);
+    height: 260px;
+    background:rgba(0,0,0,0.40);
     opacity: 1;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
    -moz-transition: all 0.5s;
 }
 
-.profile-text{
-	font-family: 'Khand', sans-serif;
-	font-weight: bolder;
-	font-size: 60px;
-	text-align: center;
-	letter-spacing: 7px;
-	color: white;
+.wrap {
+    background: #f4f4f4;
 }
 
-.profile-info{
-	background-color: #E0E0E0;
+.wrap-inner{
+	padding: 30px 30px 40px 30px;
+	height: 500px;
 }
 
-.my-info{
-	margin-top: 30px;
-	margin-right: 230px;
-	margin-left: 250px;
-
-}
-
-.header-info{
-	border: 1px solid;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-	width: 800px;
-	height: 100px;
-	background-color: #F8F8F8;
-	font-size: 40px;
-	color: black;
-}
-
-.sub-info{
-	border: 1px solid grey;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-	width: 800px;
-	height: 400px;
-	background-color: white;
-	font-size: 20px;
-	color: black;
-}
 
 .student-icon{
 	margin-top: 20px;
@@ -228,4 +223,98 @@
 	height: 60px;
 	border-radius: 50px;
 	float: left;
+}
+
+.profile-text{
+	margin-top: -170px;
+	text-align: left;
+	font-family: 'Khand', sans-serif;
+	font-weight: bolder;
+	font-size: 60px;
+	text-align: center;
+	letter-spacing: 7px;
+	color: white;
+}
+
+.column-under{
+	padding: 40px;
+	width: auto;
+    margin: -120px 0 30px 0;
+    padding: 40px 50px 40px 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+    height: 500px;
+}
+
+.profile-info{
+	background-color: #E0E0E0;
+}
+
+.student-propic{
+	margin-top: 0px;
+	margin-left: 50px;
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+	border: 2px solid black;
+	float: left;
+}
+
+.circles-row{
+	margin-left: 300px;
+	margin-top: 20px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.blue{
+	background-color: #428bca;
+	width: 120px;
+	height: 120px;
+}
+
+.circle-img{
+	margin-top: 20px;
+	margin-left: 25px;
+	height: 70px;
+	width: 70px;
+}
+
+.green{
+	background-color: #21BF08;
+	width: 120px;
+	height: 120px;
+}
+
+.yellow{
+	background-color: #E8DE44;
+	width: 120px;
+	height: 120px;
+}
+
+.new{
+	margin-left: -15px;
+}
+
+.study{
+	margin-left: 22px;
+}
+
+.list-unstyled{
+	margin-top: 30px;
+	margin-left: 240px;
+
+}
+
+.title{
+	margin-top: 80px;
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+
+.sub-info{
+	font-size: 20px;
 }

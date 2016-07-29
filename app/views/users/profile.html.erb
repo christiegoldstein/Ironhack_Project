@@ -1,47 +1,42 @@
 <div class="container-fluid">
-	<nav class="navbar ">
-		<a class="navbar-brand"><img src="/assets/Book_Stack.png" class="logo"></a>
-			<div class="row">
-				<ul class="nav navbar-nav navbar-right nav-list">
-				   	<li class="nav-item active">
-				      	<a class="nav-link" href="/users/profile">Profile<span class="sr-only"></span></a>
-				    </li>
-				    <li class="nav-item active">
-				      	<a class="nav-link" href="/users/find_groups">Find Groups<span class="sr-only"></span></a>
-				    </li>
-				    <li class="nav-item active">
-				      	<a class="nav-link" href="/users/sign-out">Sign Out <span class="sr-only"></span></a>
-				    </li>
-				</ul>
+	<div class="wrap">
+		<div class="row bg-img-pro">
+			<div class="bg-gradient-pro">
+				<div>
+				<nav class="navbar navbar-default" role="navigation">
+					<a class="navbar-brand"><img src="/assets/books-white.png" class="logo"> StudyHub</a>
+							<ul class="nav navbar-nav navbar-right nav-list">
+							   	<li class="nav-item">
+							      	<a class="nav-link" href="/users/profile">Profile<span class="sr-only"></span></a>
+							    </li>
+							    <li class="nav-item">
+							     	<a class="nav-link" href="/users/find_groups">Find Groups</a>
+							    </li>
+							    <li class="nav-item">
+							      	<a class="nav-link" href="/users/sign_out">Sign Out</a>
+							   	</li>
+							</ul>
+					
+				</nav> 
 			</div>
-	</nav> 
-
-	<div class="row bg-img-pro">
-		<div class="bg-gradient-pro">
-            <div class="welcome">
-            	<p class="profile-text">PROFILE</p>
-            </div>
-           
-        </div>
-	</div>
-
-	<div class="row profile-info">
-		<div class="my-info">
-			<img src="/assets/images.jpg" class="student-icon">
-			<div class="header-info">
-				<p><%= current_user.name %></p>
 			</div>
-			<div class="sub-info">
-				<ul class="list-unstyled">
-					<li>Full Name: <%= current_user.name %> <%= current_user.last_name %></li>
-		          	<li>University: <%= current_user.university %></li>
-		          	<li>Major: <%= current_user.major %></li>
-		          	<li>Minor: <%= current_user.minor %></li>
-		          	<li>Hobbies: <%= current_user.hobbies.name %></li>
-		          	<li>Class: <%= current_user.courses.first.name %> - <%= current_user.courses.first.code %></li>
-		        </ul>
+			<h2 class="profile-text">Profile</h2>
+		</div>
+		<div class="wrap-inner">
+			<div class="column-under">
+				<img src="/assets/temp-profile.jpg" class="student-propic">
+				<div>
+					<ul class="list-unstyled">
+						<li class="title"><p class="title"><%= current_user.name %> <%= current_user.last_name %></p></li>
+				        <li class="sub-info">University: <%= current_user.university %></li>
+				        <li class="sub-info">Major: <%= current_user.major %></li>
+				        <li class="sub-info">Minor: <%= current_user.minor %></li>
+				        <li class="sub-info">Hobbies: <%= current_user.hobbies.name %></li>
+				        <li class="sub-info">Class: <%= current_user.courses.first.name %> - <%= current_user.courses.first.code %></li>
+				    </ul>
+				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 </div>
 
