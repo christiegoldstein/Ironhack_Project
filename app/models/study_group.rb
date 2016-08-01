@@ -16,6 +16,21 @@ class StudyGroup < ApplicationRecord
  			end
  		end
  		return users_arr
+ 	end
+
+ 	def hobbies(study_groups)
+ 		hobbies_arr = []
+ 		study_groups.each do |study_group|
+ 			users = UserGroup.where(study_group_id: study_group.id)
+ 			if users.length > 1 
+ 				users.each do |user|
+ 					hobbies_arr.push(UserHobby.find_by(user_id: user.user_id))
+ 				end
+ 			else 
+ 				hobbies_arr.push(UserHobby.find_by(user_id: users[0].user_id))
+ 			end
+ 		end
+ 		return hobbies_arr
 	 	
  	end
 end
