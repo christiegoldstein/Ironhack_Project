@@ -372,3 +372,22 @@
 .sub-list{
 	margin-left: 30px;
 }
+
+.sign{
+	background-color: #fff;
+	width: auto;
+	height: 530px;
+}
+
+.sign-info{
+	background-color: #f0f3f6;
+	border-radius: 10px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.20);
+	height: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	text-align: center;
+	margin-left: 460px;
+	padding: 10px 10px 10px 10px;
+	width: 300px;
+}
