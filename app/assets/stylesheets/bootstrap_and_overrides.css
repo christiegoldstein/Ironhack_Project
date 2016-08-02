@@ -409,4 +409,8 @@
 
 }
 
+.navbar-nav>li>a:focus {
+    color: #E91E63;
+    background-color: transparent;
+}
 

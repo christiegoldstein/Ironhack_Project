@@ -44,7 +44,7 @@
 							<p>Hobbies of Group Members:
 								<ul class="list-unstyled">
 									<% @hobbies_arr.each do |hobby| %>
-										<% if hobby != nil%>
+										<% if hobby != nil %>
 											<li class="sub-list"><%= Hobby.find_by(id: hobby.hobby_id).name %></li>
 										<% end %>
 									<% end %>
