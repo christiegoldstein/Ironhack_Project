@@ -30,6 +30,8 @@ class StudyGroup < ApplicationRecord
  				hobbies_arr.push(UserHobby.find_by(user_id: users[0].user_id))
  			end
  		end
+ 		p "hi"
+ 		p hobbies_arr
  		return hobbies_arr
 	 	
  	end

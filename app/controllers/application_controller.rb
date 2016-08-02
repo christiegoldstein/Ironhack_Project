@@ -14,11 +14,12 @@ class ApplicationController < ActionController::Base
   		end
   	end
 
+    def after_inactive_sign_up_path_for(resource)
+      "/users/profile/edit"
+    end
+
   	def after_sign_in_path_for(resource)
-  		"/users/profile"
+  	 	"/users/profile/edit"
   	end
 
-  	def after_sign_up_path_for(resource)
-  		"/users/profile/edit"
-  	end
 end

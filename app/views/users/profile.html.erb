@@ -24,20 +24,77 @@
 		</div>
 		<div class="wrap-inner">
 			<div class="column-under">
-				<img src="/assets/temp-profile.jpg" class="student-propic">
-				<div>
-					<ul class="list-unstyled pro-list">
-						<li class="title"><p class="title"><%= current_user.name %> <%= current_user.last_name %></p></li>
-				        <li class="sub-info">University: <%= current_user.university %></li>
-				        <li class="sub-info">Major: <%= current_user.major %></li>
-				        <li class="sub-info">Minor: <%= current_user.minor %></li>
-				        <li class="sub-info">Hobbies: <%= current_user.hobbies.name %></li>
-				        <li class="sub-info">Class: <%= current_user.courses.first.name %> - <%= current_user.courses.first.code %></li>
-				    </ul>
-				</div>
+					<img src="/assets/temp-profile.jpg" class="student-propic">
+					<div>
+						<ul class="list-unstyled pro-list">
+							<li class="title"><p class="title"><%= current_user.name %> <%= current_user.last_name %></p></li>
+					        <li class="sub-info">University: <%= current_user.university %></li>
+					        <li class="sub-info">Major: <%= current_user.major %></li>
+					        <li class="sub-info">Minor: <%= current_user.minor %></li>
+					        <% if current_user.hobbies != nil %>
+					        	<li class="sub-info">Hobbies: <%= current_user.hobbies.last.name %></li>
+					        <% end %>
+					        <% if current_user.courses != nil %>
+					        	<li class="sub-info">Class: <%= current_user.courses.first.name %> - <%= current_user.courses.first.code %></li>
+					        <% end %>
+					    </ul>
+					</div>
+			</div>
+			<div class="col-sm-4 group-info">
+				<% if @group != nil %>
+					<div class="my-group">
+						<h2>Group: <%= @study_group.name %></h2>
+						<ul class="list-unstyled">
+							<li>Course: <%= Course.find_by(id: @study_group.course_id).name %> - <%= Course.find_by(id: @study_group.course_id).code %></li>
+							<li>Meeting Place: <%= @study_group.meet_place%></li>
+							<li>Meeting Time: <%= @study_group.meet_time%></li>
+							<button class="btn btn-default member-btn">See Members</button>
+					</div>
+				<% end %>
 			</div>
 		</div>
 	</div>
+	<% if @group != nil %>
+	<div class="modal fade js-members-modal">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title">Members</h4>
+	            </div>
+	            <div class="modal-body members-body">
+					<dl class="dl-horizontal">
+						<div class="artist-info">
+							<% @users.each do |user| %>
+								<dd><img src="/assets/temp-profile.jpg" class="member-profile"></dd>
+								<div class="member-info">
+		             				<dt>Name</dt>
+		             				<dd><%= User.find_by(id: user.user_id).name %> <%= User.find_by(id: user.user_id).last_name %></dd>
+
+		             				<dt>Major</dt>
+		             				<dd><%= User.find_by(id: user.user_id).major %></dd>
+
+		             				<dt>Minor</dt>
+		             				<dd><%= User.find_by(id: user.user_id).minor %></dd>
+
+		              				<% if UserHobby.find_by(user_id: user.user_id) != nil %>
+		              					<dt>Hobby</dt>
+		              					<dd><%= Hobby.find_by(id: UserHobby.find_by(user_id: user.user_id).hobby_id).name%></dd>
+		              				<% end %>
+		              			</div>
+		              		<% end %>
+	            		</div>
+           			</dl>
+	        	</div>
+
+		       	<div class="modal-footer">
+		          	<button type="button" class="btn btn-default artist-button" data-dismiss="modal">Close</button> 
+		        </div>
+		    </div>
+	    </div>
+	</div>
+	<% end %>
+							
 	<div class="row footer">
 		<h2>StudyHub</h2>
 	</div>
