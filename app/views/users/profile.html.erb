@@ -13,7 +13,7 @@
 							     	<a class="nav-link" href="/users/find_groups">Find Groups</a>
 							    </li>
 							    <li class="nav-item">
-							      	<%= link_to 'Sign out', '/users/sign_out', :method => :delete %>
+							      	<%= link_to 'Sign out', "/users/sign_out", :method => :delete %>
 							   	</li>
 							</ul>
 					
@@ -45,9 +45,9 @@
 					<div class="my-group">
 						<h2>Group: <%= @study_group.name %></h2>
 						<ul class="list-unstyled">
-							<li>Course: <%= Course.find_by(id: @study_group.course_id).name %> - <%= Course.find_by(id: @study_group.course_id).code %></li>
-							<li>Meeting Place: <%= @study_group.meet_place%></li>
-							<li>Meeting Time: <%= @study_group.meet_time%></li>
+							<li class="group-info-list">Course: <%= Course.find_by(id: @study_group.course_id).name %> - <%= Course.find_by(id: @study_group.course_id).code %></li>
+							<li class="group-info-list">Meeting Place: <%= @study_group.meet_place%></li>
+							<li class="group-info-list">Meeting Time: <%= @study_group.meet_time%></li>
 							<button class="btn btn-default member-btn">See Members</button>
 					</div>
 				<% end %>

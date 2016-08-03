@@ -12,9 +12,9 @@
 							    <li class="nav-item">
 							     	<a class="nav-link" href="/users/find_groups">Find Groups</a>
 							    </li>
-							    <li class="nav-item">
-							      	<a class="nav-link" href="/users/sign_out">Sign Out</a>
-							   	</li>
+							     <li class="nav-item">
+							      	<%= link_to 'Sign Out', "/users/sign_out", :method => :delete %>
+							   	</li>							
 							</ul>
 					
 				</nav> 
@@ -44,7 +44,7 @@
 							<p>Hobbies of Group Members:
 								<ul class="list-unstyled">
 									<% @hobbies_arr.each do |hobby| %>
-										<% if hobby != nil %>
+										<% if UserGroup.find_by(user_id: hobby.user_id, study_group_id: group.id) %>
 											<li class="sub-list"><%= Hobby.find_by(id: hobby.hobby_id).name %></li>
 										<% end %>
 									<% end %>
