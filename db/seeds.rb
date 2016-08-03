@@ -76,9 +76,9 @@ sarah_hobby = UserHobby.create!(user_id: sarah.id, hobby_id: soccer.id)
 paul_hobby = UserHobby.create!(user_id: paul.id, hobby_id: reading.id)
 caroline_hobby = UserHobby.create!(user_id: caroline.id, hobby_id: music.id)
 steven_hobby = UserHobby.create!(user_id: steven.id, hobby_id: movies.id)
-min_hobby = UserHobby.create!(user_id: steven.id, hobby_id: dancing.id)
-daniel_hobby = UserHobby.create!(user_id: steven.id, hobby_id: coding.id)
-josh_hobby = UserHobby.create!(user_id: steven.id, hobby_id: drawing.id)
+min_hobby = UserHobby.create!(user_id: min.id, hobby_id: dancing.id)
+daniel_hobby = UserHobby.create!(user_id: daniel.id, hobby_id: coding.id)
+josh_hobby = UserHobby.create!(user_id: josh.id, hobby_id: drawing.id)
 
 #user course
 nick_course1 = UserCourse.create!(user_id:nick.id, course_id: calculus1.id)
