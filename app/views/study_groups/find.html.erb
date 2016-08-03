@@ -27,38 +27,38 @@
 				<h1 class="title-group-find">Groups for: <%= @course %></h1>
 				<ul class="list-unstyled">
 					<% @searched_groups.each do |group| %>
-						<div class="blue-group">
-							<li><h3><%= group.name %></h3></li>
-							<p>Meeting Location: <%= group.meet_place %></p>
-							<p>Meeting Time: <%= group.meet_time %></p>
-							<p>Majors of Group Members: 
-								<ul class="list-unstyled">
-									<% @users_arr.each do |user| %>
-										<% if UserGroup.find_by(user_id: user.id, study_group_id: group.id) != nil
-										%>
-											<li class="sub-list"><%= user.major %></li>
+							<div class="blue-group">
+								<li><h3><%= group.name %></h3></li>
+								<p>Meeting Location: <%= group.meet_place %></p>
+								<p>Meeting Time: <%= group.meet_time %></p>
+								<p>Majors of Group Members: 
+									<ul class="list-unstyled">
+										<% @users_arr.each do |user| %>
+											<% if UserGroup.find_by(user_id: user.id, study_group_id: group.id) != nil
+											%>
+												<li class="sub-list"><%= user.major %></li>
+											<% end %>
 										<% end %>
-									<% end %>
-								</ul>
-							</p>
-							<p>Hobbies of Group Members:
-								<ul class="list-unstyled">
-									<% @hobbies_arr.each do |hobby| %>
-										<% if UserGroup.find_by(user_id: hobby.user_id, study_group_id: group.id) %>
-											<li class="sub-list"><%= Hobby.find_by(id: hobby.hobby_id).name %></li>
+									</ul>
+								</p>
+								<p>Hobbies of Group Members:
+									<ul class="list-unstyled">
+										<% @hobbies_arr.each do |hobby| %>
+											<% if UserGroup.find_by(user_id: hobby.user_id, study_group_id: group.id) %>
+												<li class="sub-list"><%= Hobby.find_by(id: hobby.hobby_id).name %></li>
+											<% end %>
 										<% end %>
-									<% end %>
-								</ul>
-							</p>
-							<form action="/users/profile" method="POST">
-							  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-							  <input type="hidden" name="group_id" value="<%= group.id%>">
-							  <center>
-							  <input type="submit" value="Make This My Group">
-							  </center>
-							</form>
-						</div>
-					<% end %>
+									</ul>
+								</p>
+								<form action="/users/profile" method="POST">
+								  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+								  <input type="hidden" name="group_id" value="<%= group.id%>">
+								  <center>
+								  <input type="submit" value="Make This My Group">
+								  </center>
+								</form>
+							</div>
+						<% end %>
 				</ul>
 			</div>
 		</div>

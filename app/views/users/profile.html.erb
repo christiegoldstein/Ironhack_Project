@@ -13,7 +13,7 @@
 							     	<a class="nav-link" href="/users/find_groups">Find Groups</a>
 							    </li>
 							    <li class="nav-item">
-							      	<%= link_to 'Sign out', "/users/sign_out", :method => :delete %>
+							      	<%= link_to 'Sign Out', "/users/sign_out", :method => :delete %>
 							   	</li>
 							</ul>
 					
@@ -49,6 +49,7 @@
 							<li class="group-info-list">Meeting Place: <%= @study_group.meet_place%></li>
 							<li class="group-info-list">Meeting Time: <%= @study_group.meet_time%></li>
 							<button class="btn btn-default member-btn">See Members</button>
+							<button class="btn btn-default note-btn">Notes</button>
 					</div>
 				<% end %>
 			</div>
@@ -83,6 +84,32 @@
 		              				<% end %>
 		              			</div>
 		              		<% end %>
+	            		</div>
+           			</dl>
+	        	</div>
+
+		       	<div class="modal-footer">
+		          	<button type="button" class="btn btn-default artist-button" data-dismiss="modal">Close</button> 
+		        </div>
+		    </div>
+	    </div>
+	</div>
+
+	<div class="modal fade js-notes-modal">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title">Notes</h4>
+	            </div>
+	            <div class="modal-body notes-body">
+					<dl class="dl-horizontal">
+						<div class="notes-info">
+							<form action="demo_form.asp">
+							  <textarea name="comment" form="usrform">Enter text here...</textarea>
+
+							  <input type="submit" value="Submit">
+							</form>
 	            		</div>
            			</dl>
 	        	</div>

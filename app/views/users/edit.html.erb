@@ -1,53 +1,57 @@
-<h1>Edit Your Profile</h1>
+<div class="container-fluid sign">
+  <div class="sign-info"> 
+    <h1>Edit Your Profile</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for current_user, :url => url_for(:controller => 'users', :action => 'update') do |f| %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for current_user, :url => url_for(:controller => 'users', :action => 'update') do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.label :university %>
-      <%= f.text_field :university, class: 'form-control' %>
+          <%= f.label :university %>
+          <%= f.text_field :university, class: 'form-control' %>
 
-      <%= f.label :major %>
-      <%= f.text_field :major, class: 'form-control' %>
+          <%= f.label :major %>
+          <%= f.text_field :major, class: 'form-control' %>
 
-      <%= f.label :minor %>
-      <%= f.text_field :minor, class: 'form-control' %>
-
-
-	  <%= f.fields_for :hobbies, @user.hobbies.new do |h| %>
-	     <div>
-	        <%= h.label :name, "Hobby Name" %><br />
-	        <%= h.text_field :name %>
-	     </div>
-	  <% end %>
+          <%= f.label :minor %>
+          <%= f.text_field :minor, class: 'form-control' %>
 
 
-	  <%= f.fields_for :courses, @user.courses.new do |c| %>
-	    <div>
-	      <%= c.label :name, "Course Name" %><br />
-	      <%= c.text_field :name %>
-	    </div>
-	    <div>
-	      <%= c.label :code, "Course Code" %><br />
-	      <%= c.text_field :code %>
+    	  <%= f.fields_for :hobbies, @user.hobbies.new do |h| %>
+    	     <div>
+    	        <%= h.label :name, "Hobby Name" %><br />
+    	        <%= h.text_field :name %>
+    	     </div>
+    	  <% end %>
 
-	    </div>
-	  <% end %>
 
-      <%= f.submit "Update Profile", class: "btn btn-primary" %>
-    <% end %>
+    	  <%= f.fields_for :courses, @user.courses.new do |c| %>
+    	    <div>
+    	      <%= c.label :name, "Course Name" %><br />
+    	      <%= c.text_field :name %>
+    	    </div>
+    	    <div>
+    	      <%= c.label :code, "Course Code" %><br />
+    	      <%= c.text_field :code %>
 
+    	    </div>
+    	  <% end %>
+
+          <%= f.submit "Update Profile", class: "btn btn-primary" %>
+        <% end %>
+
+      </div>
+    </div>
   </div>
 </div>

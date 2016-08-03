@@ -20,4 +20,8 @@ $(document).ready(function(){
 	$(".member-btn").on("click", function(){
 		$(".js-members-modal").modal("show");
 	});
+
+	$(".note-btn").on("click", function(){
+		$(".js-notes-modal").modal("show");
+	});
 });
