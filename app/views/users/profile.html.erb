@@ -38,6 +38,8 @@
 					        	<li class="sub-info">Class: <%= current_user.courses.first.name %> - <%= current_user.courses.first.code %></li>
 					        <% end %>
 					    </ul>
+					    <a href="/users/profile/edit" class="btn btn-default note-btn">Edit</a>
+
 					</div>
 			</div>
 			<div class="col-sm-4 group-info">
@@ -106,7 +108,7 @@
 					<dl class="dl-horizontal">
 						<div class="notes-info">
 							<form action="demo_form.asp">
-							  <textarea name="comment" form="usrform" rows="20" cols="70">Enter text here...</textarea>
+							  <textarea name="comment" form="usrform" rows="18" cols="70">Enter text here...</textarea>
 
 							  <input type="submit" value="Submit">
 							</form>

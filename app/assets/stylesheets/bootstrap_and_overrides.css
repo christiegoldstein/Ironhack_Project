@@ -426,6 +426,12 @@
 	margin-top: 10px;
 }
 
+.black-btn{
+	border-color: black;
+	color: black;
+	margin-top: 10px;
+}
+
 .note-btn{
 	border-color: black;
 	color: black;
